@@ -1,8 +1,8 @@
-import './App.css';
-import useLocalStorage from 'use-local-storage'
-import React, { Suspense } from 'react';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { I18nContext, useTranslation } from 'react-i18next';
+import useLocalStorage from 'use-local-storage';
+import './App.css';
 
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
   };
 
   return (
-      <div className="App" data-theme={theme? 'dark' : 'light'}>
-        <div className='TopBar'>
+      <div className="app" data-theme={theme? 'dark' : 'light'}>
+        <div className='header'>
           <DarkModeSwitch
           className='DarkModeToggle'
           style={{ marginBottom: '2rem' }}
@@ -35,10 +35,48 @@ function App() {
           {lng ? "EN" : "DK"}
         </button>
         </div>
-        <div className='Content'>
-        <h1 className='Title'>{t('title')}</h1>
+        <div className='main-container'>
+          <div className='main-container-inner'>
+            <div className='inner-container'>
+              <h1 className='Title'>{t('title')}</h1>
+              <div className='section'>
+                <h2 className='section-title'>Test</h2>
+                <span className='section-contents'>
+                  <p>Description</p>
+                </span>
+              </div>
+              <div className='spacer'/>
+              <div className='selector-content'>
+                <h2 className='selector-title'>profile</h2>
+                <div className='selection-wrapper'>
+                  <div className='selection'>
+                    <a>
+                      <span>
+                        test1
+                      </span>
+                    </a>
+                    <a>
+                      <span>
+                        test1
+                      </span>
+                    </a>
+                    <a>
+                      <span>
+                        test1
+                      </span>
+                    </a>
+                    <a>
+                      <span>
+                        test1
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='BottomBar'>
+        <div className='footer'>
         </div>
       </div>
   );
