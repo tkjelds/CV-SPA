@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import useLocalStorage from 'use-local-storage';
@@ -11,6 +11,19 @@ function App() {
   const [lng, setLng] = useLocalStorage("lng" ? true : false) // true = dk, false = en
 
   const [theme, setTheme] = useLocalStorage('theme' ? true : false) // true = light, false = dark
+  
+  const [sectionContent, setSectionContent] = useState("section-text-about-me")
+
+  const [sectionTitle, setSectionTitle] = useState('selection-title-about-me')
+
+  function updateSection(selectionTitle, sectionContent) {
+    setSectionTitle(selectionTitle)
+    setSectionContent(sectionContent)
+  }
+
+  function updateSectionProjects(){
+    //TODO
+  }
 
   const switchTheme = (checked)  => {
     setTheme(checked)
@@ -18,10 +31,24 @@ function App() {
 
   const changeLanguage = () => {
     setLng(!lng);
+    updateSection(sectionTitle,sectionContent)
     lng ? i18n.changeLanguage("dk") : i18n.changeLanguage("en");
   };
 
+  function section()
+  {              
+    return(
+      <div className='section'>
+        <h2 className='section-title'>{t(sectionTitle)}</h2>
+        <span className='section-content'>
+          <p>{t(sectionContent)}</p>
+        </span>
+      </div>
+    )
+  };
+
   return (
+    <Suspense >
       <div className="app" data-theme={theme? 'dark' : 'light'}>
         <div className='header'>
           <DarkModeSwitch
@@ -41,47 +68,36 @@ function App() {
               <h1 className='Title'>{t('title')}</h1>
               <div className='Title-spacer'></div>
               <div className='selector-content'>
-                <h2 className='selector-title'>profile</h2>
+                <h2 className='selector-title'>{t(sectionTitle)}</h2>
                 <div className='selection-wrapper'>
                   <div className='selection'>
                     <a>
-                      <span>
-                        test1
+                      <span onClick={() => updateSection("selection-title-about-me","section-text-about-me")}>
+                        {t('selection-title-about-me')}
                       </span>
                     </a>
                     <a>
-                      <span>
-                        test1
+                      <span onClick={() => updateSection("selection-title-projects","section-text-projects")}>
+                        {t('selection-title-projects')}
                       </span>
                     </a>
                     <a>
-                      <span>
-                        test1
-                      </span>
-                    </a>
-                    <a>
-                      <span>
-                        test1
+                      <span onClick={() => updateSection("selection-title-contact","section-text-contact")}>
+                        {t('selection-title-contact')}
                       </span>
                     </a>
                   </div>
                 </div>
-              </div>              
-              <div className='section'>
-                <h2 className='section-title'>{t('lorem-ipsum-short')}</h2>
-                <span className='section-content'>
-                  <p>{t('lorem-ipsum-long')}</p>
-                </span>
-              </div>
-              
+              </div>       
+              {section()}     
               <div className='spacer'/>
-
             </div>
           </div>
         </div>
         <div className='footer'>
         </div>
       </div>
+      </Suspense>
   );
 }
 
