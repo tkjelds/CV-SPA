@@ -16,13 +16,18 @@ function App() {
 
   const [sectionTitle, setSectionTitle] = useState('selection-title-about-me')
 
+  const [contentSwitch, setContentSwitch] = useState(true) // true = textBasedContent | false = projectBasedContent
+
   function updateSection(selectionTitle, sectionContent) {
+    setContentSwitch(true)
     setSectionTitle(selectionTitle)
     setSectionContent(sectionContent)
   }
 
-  function updateSectionProjects(){
-    //TODO
+  function updateSectionProjects(selectionTitle, sectionContent){
+    setContentSwitch(false)
+    setSectionTitle(selectionTitle);
+    setTextContent(sectionContent)
   }
 
   const switchTheme = (checked)  => {
@@ -41,7 +46,7 @@ function App() {
       <div className='section'>
         <h2 className='section-title'>{t(sectionTitle)}</h2>
         <span className='section-content'>
-          <p>{t(sectionContent)}</p>
+          {switchContent()}
         </span>
       </div>
     )
@@ -82,7 +87,7 @@ function App() {
                       </span>
                     </a>
                     <a>
-                      <span onClick={() => updateSection("selection-title-contact","section-text-contact")}>
+                      <span onClick={() => updateSectionProjects("selection-title-contact","section-text-contact")}>
                         {t('selection-title-contact')}
                       </span>
                     </a>
@@ -99,6 +104,17 @@ function App() {
       </div>
       </Suspense>
   );
+
+  function switchContent(){
+    return contentSwitch ? setTextContent() : setProjectContent()
+  }
+
+  function setTextContent() {
+    return <p>{t(sectionContent)}</p>;
+  }
+  function setProjectContent() {
+    return <p>{t(sectionContent)}</p>;
+  }
 }
 
 export default App;
