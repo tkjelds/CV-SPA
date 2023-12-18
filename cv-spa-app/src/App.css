@@ -31,7 +31,7 @@ a {
 }
 
 p {
-  color: var(--text-accent);
+  color: var(--text-primary);
 }
 
 .app {
@@ -105,6 +105,22 @@ p {
   flex-basis: 53.4752%;
   opacity: 1;
   transform: scaleX(1);
+  background-color: var(--text-accent);
+  border-radius: 8px;
+  opacity: 70%;
+  padding: 10px;
+}
+
+.section-title {  
+  text-align: left;
+  padding-bottom: 10px;
+  color: var(#0000);
+  font-size: 70px;
+}
+
+.section-content {
+  text-align: left;
+
 }
 
 .spacer {
@@ -119,8 +135,7 @@ p {
   margin: 0px;
   padding: 0px;
   display: grid;
-  flex-direction: column;
-  align-items: center;
+  padding-bottom: 200px;
 }
 
 .selection-wrapper {
@@ -132,7 +147,7 @@ p {
   height: 100px;
   background: linear-gradient(136deg,var(--error)0%,var(--success)50%,var(--error)100%);
   opacity: 1;
-  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   transition: all .3s ease-in-out;
   position: absolute;
   top: -1px;
@@ -144,13 +159,13 @@ p {
 .selection {
   z-index: 1;
   background: var(--background);
-  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   flex-direction: column;
   margin-left: 0;
   padding: 30px 30px 0;
   display: flex;
   position: relative;
-  right: -2px;
+  left: -2px;
   bottom: -2px;
 }
 
@@ -163,6 +178,10 @@ p {
   font-weight: 100;
   grid-column: 1;
   grid-row: 1;
+}
+
+.Title-spacer {
+  width: 10px;
 }
 
 .Title {

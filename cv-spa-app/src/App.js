@@ -39,13 +39,7 @@ function App() {
           <div className='main-container-inner'>
             <div className='inner-container'>
               <h1 className='Title'>{t('title')}</h1>
-              <div className='section'>
-                <h2 className='section-title'>Test</h2>
-                <span className='section-contents'>
-                  <p>Description</p>
-                </span>
-              </div>
-              <div className='spacer'/>
+              <div className='Title-spacer'></div>
               <div className='selector-content'>
                 <h2 className='selector-title'>profile</h2>
                 <div className='selection-wrapper'>
@@ -72,7 +66,16 @@ function App() {
                     </a>
                   </div>
                 </div>
+              </div>              
+              <div className='section'>
+                <h2 className='section-title'>{t('lorem-ipsum-short')}</h2>
+                <span className='section-content'>
+                  <p>{t('lorem-ipsum-long')}</p>
+                </span>
               </div>
+              
+              <div className='spacer'/>
+
             </div>
           </div>
         </div>
