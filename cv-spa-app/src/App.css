@@ -1,21 +1,21 @@
-:root{
-  --background:#d1d1d1;
-  --text-primary:#333333;
-  --text-secondary:#007ACC;
-  --text-accent:#a06c0c;
-  --error:#FF6347;
-  --success:#32CD32;
-  --neutral:#808080;
+:root {
+  --background: #d1d1d1;
+  --text-primary: #333333;
+  --text-secondary: #007ACC;
+  --text-accent: #a06c0c;
+  --error: #FF6347;
+  --success: #32CD32;
+  --neutral: #808080;
 }
 
-[data-theme='dark']{
-  --background:#333333;
-  --text-primary:#9AB8B1;
-  --text-secondary:#4ECDC4;
-  --text-accent:#FFD700;
-  --error:#FF6347;
-  --success:#32CD32;
-  --neutral:#A9A9A9;
+[data-theme='dark'] {
+  --background: #1d1d20;
+  --text-primary: #d3d3d3;
+  --text-secondary: #4ECDC4;
+  --text-accent: #FFD700;
+  --error: #FF6347;
+  --success: #32CD32;
+  --neutral: #A9A9A9;
 }
 
 * {
@@ -38,7 +38,9 @@ p {
   text-align: center;
   background-color: var(--background);
   box-sizing: border-box;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -47,16 +49,47 @@ p {
   overflow-y: auto;
 }
 
-.main-container {
-  height: 100vh;
-  max-height: 100vh;
-  align-items: center;
+.main-content {
+  display: block;
   overflow: hidden;
-  max-width: 100vw;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: flex-start;
+  width: 100vw;
+  max-width: 1280px;
   display: flex;
+  justify-content: space-evenly;
+}
+
+.content {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing: border-box;
+  min-height: calc(100% - 102px);
+  height: calc(100% - 102px);
+  display: flex;
+  transform: translateZ(0);
+}
+
+.spacer {
+  content: ' ';
+  width: 500px;
+  flex: 1;  
+  display: block;
+}
+
+.main-container {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 80vw;
+  justify-content: space-evenly;
+  align-items: stretch;
+  box-sizing: border-box;
+  min-height: calc(100% - 402px);
 }
 
 .main-container-inner {
@@ -98,30 +131,32 @@ p {
 }
 
 .section {
-  transform-origin: 100%;
-  width: 100%;
-  height: 70%;
-  transition: all .2s linear;
   position: relative;
-  flex-basis: 53.4752%;
-  opacity: 1;
-  transform: scaleX(1);
-  background-color: var(--text-accent);
-  border-radius: 8px;
-  opacity: 70%;
-  padding: 10px;
+  flex-basis: 60%;
+  display: flex;
+  padding-top: 10%;
+  flex-direction: column;
+  align-self: center;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.section-title {  
+.section-title {
   text-align: left;
   padding-bottom: 10px;
   color: var(#0000);
   font-size: 70px;
+  position: relative;
+  transform-origin: 100%;
 }
 
 .section-content {
   text-align: left;
-
+  position: relative;
+  display: flex;
+  min-height: 30vh;
+  max-width: 70vh;
+  width: 70vh;
 }
 
 .spacer {
@@ -131,12 +166,9 @@ p {
 }
 
 .selector-content {
-  flex-basis: 30.9017%;
   position: relative;
-  align-self: flex-start;
   margin: 0px;
-  padding-top: 5%;
-
+  width: 20vh;
   display: grid;
   padding-bottom: 200px;
 }
@@ -148,7 +180,7 @@ p {
   content: " ";
   width: 150px;
   height: 100px;
-  background: linear-gradient(136deg,var(--error)0%,var(--success)50%,var(--error)100%);
+  background: linear-gradient(136deg, var(--error)0%, var(--success)50%, var(--error)100%);
   opacity: 1;
   border-top-right-radius: 8px;
   transition: all .3s ease-in-out;
@@ -193,10 +225,17 @@ a {
   width: 100%;
 }
 
-.Title {
-  max-width: 800px;
+.title {
+  display: flex;
+  max-width: 70vh;
+  min-height: 10vh;
   text-align: left;
   justify-self: right;
+  color: var(--text-primary);
+  text-rendering: auto;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .DarkModeToggle {
@@ -222,6 +261,7 @@ a {
   transition: all 0.2s ease;
 
 }
+
 .Language_button:active {
   background-color: #48abe0;
   box-shadow: 0 0 2px darkslategray;
@@ -238,15 +278,23 @@ a {
 
 @keyframes fadeInAnimation {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
+
   100% {
-      opacity: 1;
-   }
+    opacity: 1;
+  }
 }
 
 @media screen and (min-width: 500px) {
   .main-container .main-container-inner .inner-container footer {
-      text-align:right
+    text-align: right
   }
 }
+
+@media screen and (max-width: 850px) {
+  .content {
+    flex-direction: column;
+    }
+}
+
