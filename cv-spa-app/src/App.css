@@ -37,7 +37,6 @@ p {
 .app {
   text-align: center;
   background-color: var(--background);
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -227,8 +226,6 @@ a {
 
 .title {
   display: flex;
-  max-width: 70vh;
-  min-height: 10vh;
   text-align: left;
   justify-self: right;
   color: var(--text-primary);
@@ -295,6 +292,12 @@ a {
 @media screen and (max-width: 850px) {
   .content {
     flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 850px) {
+  .app {
+    position: relative;
     }
 }
 
