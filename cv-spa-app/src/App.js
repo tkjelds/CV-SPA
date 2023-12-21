@@ -67,6 +67,10 @@ function App() {
               size={40}
             />
           <div className='content'>
+            <div className='top-right-box gradient gradient-top'/>
+            <div className='bottom-right-box gradient'/>
+            <div className='top-right-box'/>
+            <div className='bottom-right-box'/>
             <div className='left'>
               <h1 className='name'> Tore Kjelds</h1>
               <div className='menu'>
