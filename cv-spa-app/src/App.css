@@ -20,9 +20,12 @@
 }
 
 .app {
-  height: 100svh;
-  max-height: 100svh;
+  overflow-y: auto;
+  min-height: 100vh;
+  display:grid;
 }
+
+
 
 * {
   padding: 0;
@@ -76,6 +79,7 @@ h3 {
 .main-container,
 .app,
 header {
+  overflow-y:scroll;
   background-color: var(--background);
   z-index: 0;
 }
@@ -98,25 +102,29 @@ header {
 }
 
 .main-container {
-  height: 100svh;
-  max-height: 100svh;
-  max-width: 100svw;
   align-items: center;
+  overflow: hidden;
+  height: 100%;
+  max-height: 1000px;
+  box-sizing: border-box;
+  align-self: center;
+  justify-self: center;
   justify-content: center;
+  align-items: center;
   display: flex;
-  overflow: auto;
 }
 
 .content {
   display: flex;
   flex-basis: 100%;
-  max-height: 791px;
-  height: 100vh;
+  min-height: calc(100% - 102px);
+  height: calc(100% - 102px);;
   width: 100vw;
   max-width: 1280px;
   padding: 2.5rem;
   align-self: center;
   justify-content: end;
+  overflow: hidden;
 }
 
 
@@ -124,14 +132,14 @@ header {
 .right {
   align-self: center;
   flex: 1;
-  display: block;
+  display: flex;
+  flex-direction: column;
   border-radius: 3%;
 }
 
 
 .left {
   flex-basis: 30%;
-  
 }
 
 .right {
@@ -231,13 +239,13 @@ a {
   .content {
     padding: 0 5rem;
     flex-direction: column;
-    justify-content: end;
-    align-items: flex-end;
     margin-bottom: 5rem;
   }
 
   .left,
   .right {
+    position: relative;
+    flex: 1;
     padding: 0;
     margin: 0 0;
     margin-top: 1em;
@@ -247,6 +255,9 @@ a {
     padding: 2.5rem 0;
   }
 
+  .right {
+    margin-bottom: auto;
+  }
 }
 
 @media (max-width: 450px) {
@@ -265,6 +276,7 @@ a {
   }
 
   .left {
+    height: auto;
     padding: 2.5rem 0;
   }
 }
