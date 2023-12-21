@@ -79,7 +79,6 @@ h3 {
 .main-container,
 .app,
 header {
-  overflow-y:scroll;
   background-color: var(--background);
   z-index: 0;
 }
