@@ -53,53 +53,55 @@ function App() {
 
   return (
     <Suspense >
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+      </style>
       <div className="app" data-theme={theme ? 'dark' : 'light'}>
-        <div className='header'>
-          <DarkModeSwitch
-            className='DarkModeToggle'
-            style={{ marginBottom: '2rem' }}
-            checked={theme}
-            onChange={switchTheme}
-            size={40}
-          />
-          <button className='Language_button' type="button" onClick={() => changeLanguage()}>
-            {lng ? "EN" : "DK"}
-          </button>
-        </div>
         <div className='main-container'>
-          <h1 className='title'>{t('title')}</h1>
+        {languageSwitch()}
+            <DarkModeSwitch
+              className='DarkModeToggle'
+              style={{ marginBottom: '2rem' }}
+              checked={theme}
+              onChange={switchTheme}
+              size={40}
+            />
           <div className='content'>
-            <div className='selector-content'>
-              <h2 className='selector-title'>{t(sectionTitle)}</h2>
-              <div className='selection-wrapper'>
-                <div className='selection'>
-                  <a>
-                    <span onClick={() => updateSection("selection-title-about-me", "lorem-ipsum-long")}>
-                      {t('selection-title-about-me')}
-                    </span>
-                  </a>
-                  <a>
-                    <span onClick={() => updateSection("selection-title-projects", "section-text-projects")}>
-                      {t('selection-title-projects')}
-                    </span>
-                  </a>
-                  <a>
-                    <span onClick={() => updateSection("selection-title-contact", "section-text-contact")}>
-                      {t('selection-title-contact')}
-                    </span>
-                  </a>
-                </div>
+            <div className='left'>
+              <h1 className='name'> Tore Kjelds</h1>
+              <div className='menu'>
+                <a>
+                  <span>
+                    About
+                  </span>
+                </a>
+                <a>
+                  <span>
+                    Projects
+                  </span>
+                </a>
+                <a>
+                  <span>
+                    Contact me
+                  </span>
+                </a>
               </div>
             </div>
-            <div className='spacer'/>
-            {section()}
+            <div className='right'>
+              <h2>about me</h2>
+              <p>Nulla aliquip irure cillum velit in consectetur exercitation pariatur do minim. Aliquip nostrud anim excepteur minim consequat cillum aute voluptate nulla velit irure id tempor quis. Reprehenderit duis id laborum Lorem laborum dolore. Labore dolor tempor in sint ea pariatur cupidatat duis in Lorem in aliqua commodo. </p>
+            </div>
           </div>
-        </div>
-        <div className='footer'>
         </div>
       </div>
     </Suspense>
   );
+
+  function languageSwitch() {
+    return <button className='Language_button' type="button" onClick={() => changeLanguage()}>
+      {lng ? "EN" : "DK"}
+    </button>;
+  }
 
   function switchContent() {
     return contentSwitch ? setTextContent() : setProjectContent()
