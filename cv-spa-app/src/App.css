@@ -136,9 +136,9 @@ header {
   border-radius: 3%;
 }
 
-
 .left {
   flex-basis: 30%;
+  padding-right: 2rem;
 }
 
 .right {
@@ -152,6 +152,7 @@ header {
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--background);
+  padding-left: 2rem;
 }
 
 .menu>* {
@@ -227,11 +228,86 @@ a {
   transform: translate(1rem, 1rem);
   background: linear-gradient(136deg, var(--error)0%, var(--success)50%, var(--error)100%);
   border-radius: 10%;
-
 }
 
 .gradient-top{
   transform: translate(1rem, -1rem);
+}
+
+
+.name_svg > * {
+  stroke:var(--text-primary);
+  fill: var(--background);
+}
+
+.name_svg path:nth-child(1) {
+  stroke-dasharray: 582;
+  stroke-dashoffset: 582;
+  animation: line-animation 2s ease forwards 3.0s, fill 0.5s ease forwards 3.3s;
+}
+
+.name_svg path:nth-child(2) {
+  stroke-dasharray: 736 ;
+  stroke-dashoffset: 736;
+  animation: line-animation 2s ease forwards 2.7s,fill 0.5s ease forwards 3.3s;
+}
+.name_svg path:nth-child(3) {
+  stroke-dasharray: 343;
+  stroke-dashoffset: 343;
+  animation: line-animation 2s ease forwards 2.4s, fill 0.5s ease forwards 3.3s;
+}
+.name_svg path:nth-child(4) {
+  stroke-dasharray: 685;
+  stroke-dashoffset: 685;
+  animation: line-animation 2s ease forwards 2.1s, fill 0.5s ease forwards 3.3s;
+}
+
+.name_svg path:nth-child(5) {
+  stroke-dasharray: 488;
+  stroke-dashoffset: 488;
+  animation: line-animation 2s ease forwards 1.8s, fill 0.5s ease forwards 3.3s;
+}
+.name_svg path:nth-child(6) {
+  stroke-dasharray: 702;
+  stroke-dashoffset: 702;
+  animation: line-animation 2s ease forwards 1.5s, fill 0.5s ease forwards 3.3s;
+}
+
+.name_svg path:nth-child(7) {
+  stroke-dasharray: 685;
+  stroke-dashoffset: 685;
+  animation: line-animation 2s ease forwards 1.2s, fill 0.5s ease forwards 3.3s;
+}
+.name_svg path:nth-child(8) {
+  stroke-dasharray: 345;
+  stroke-dashoffset: 345;
+  animation: line-animation 2s ease forwards 0.9s, fill 0.5s ease forwards 3.3s;
+}
+.name_svg path:nth-child(9) {
+  stroke-dasharray: 578;
+  stroke-dashoffset: 578;
+  animation: line-animation 2s ease forwards 0.6s, fill 0.5s ease forwards 3.3s;
+}
+
+.name_svg path:nth-child(10) {
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: line-animation 2s ease forwards 0.3s, fill 0.5s ease forwards 3.3s;
+}
+
+@keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from{
+    fill: var(--background);
+  }
+  to{
+    fill: var(--text-primary);
+  }
 }
 
 @media (max-width: 800px) {

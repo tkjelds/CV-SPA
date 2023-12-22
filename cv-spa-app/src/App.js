@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import useLocalStorage from 'use-local-storage';
 import './App.css';
-
+import Name_svg from './Name_svg';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -17,6 +17,8 @@ function App() {
   const [sectionTitle, setSectionTitle] = useState('selection-title-about-me')
 
   const [contentSwitch, setContentSwitch] = useState(true) // true = textBasedContent | false = projectBasedContent
+
+  const _name_svg = Name_svg();
 
   function updateSection(selectionTitle, sectionContent) {
     setContentSwitch(true)
@@ -33,7 +35,10 @@ function App() {
   const switchTheme = (checked) => {
     setTheme(checked)
   }
-
+  const temp = document.querySelectorAll(".name_svg path")
+  for(let i = 0; i<temp.length; i++){
+    console.log('letter: ' + i + ' is ' + temp[i].getTotalLength())
+  }
   const changeLanguage = () => {
     setLng(!lng);
     updateSection(sectionTitle, sectionContent)
@@ -50,7 +55,6 @@ function App() {
       </div>
     )
   };
-
   return (
     <Suspense >
       <style>
@@ -58,21 +62,21 @@ function App() {
       </style>
       <div className="app" data-theme={theme ? 'dark' : 'light'}>
         <div className='main-container'>
-        {languageSwitch()}
-            <DarkModeSwitch
-              className='DarkModeToggle'
-              style={{ marginBottom: '2rem' }}
-              checked={theme}
-              onChange={switchTheme}
-              size={40}
-            />
+          {languageSwitch()}
+          <DarkModeSwitch
+            className='DarkModeToggle'
+            style={{ marginBottom: '2rem' }}
+            checked={theme}
+            onChange={switchTheme}
+            size={40}
+          />
           <div className='content'>
-            <div className='top-right-box gradient gradient-top'/>
-            <div className='bottom-right-box gradient'/>
-            <div className='top-right-box'/>
-            <div className='bottom-right-box'/>
+            <div className='top-right-box gradient gradient-top' />
+            <div className='bottom-right-box gradient' />
+            <div className='top-right-box' />
+            <div className='bottom-right-box' />
             <div className='left'>
-              <h1 className='name'> Tore Kjelds</h1>
+              {Name_svg()}
               <div className='menu'>
                 <a>
                   <span>
