@@ -42,7 +42,7 @@ function About_me_timeline() {
   );
 }
 
-function About_me() {
+const About_me = () => {
   return (
     <div className="about_me_section right_section">
       {About_me_timeline()}{" "}
@@ -56,6 +56,6 @@ function About_me() {
       </div>
     </div>
   );
-}
+};
 
 export default About_me;

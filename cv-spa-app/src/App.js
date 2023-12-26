@@ -10,24 +10,9 @@ import Projects from "./Sections/Projects";
 
 function App() {
   const { t, i18n } = useTranslation();
-
   const [lng, setLng] = useLocalStorage("lng" ? true : false); // true = dk, false = en
-
   const [theme, setTheme] = useLocalStorage("theme" ? true : false); // true = light, false = dark
-
-  const [sectionContent, setSectionContent] = useState("lorem-ipsum-long");
-
-  const [sectionTitle, setSectionTitle] = useState("selection-title-about-me");
-
-  const [contentSwitch, setContentSwitch] = useState(true); // true = textBasedContent | false = projectBasedContent
-
   const [section, setSection] = useState(About_me());
-
-  function updateSection(selectionTitle, sectionContent) {
-    setContentSwitch(true);
-    setSectionTitle(selectionTitle);
-    setSectionContent(sectionContent);
-  }
 
   const switchTheme = (checked) => {
     setTheme(checked);
@@ -35,8 +20,19 @@ function App() {
 
   const changeLanguage = () => {
     setLng(!lng);
-    updateSection(sectionTitle, sectionContent);
     lng ? i18n.changeLanguage("dk") : i18n.changeLanguage("en");
+  };
+
+  const languageSwitch = () => {
+    return (
+      <button
+        className="Language_button"
+        type="button"
+        onClick={() => changeLanguage()}
+      >
+        {lng ? "EN" : "DK"}
+      </button>
+    );
   };
 
   return (
@@ -80,29 +76,5 @@ function App() {
       </div>
     </Suspense>
   );
-
-  function languageSwitch() {
-    return (
-      <button
-        className="Language_button"
-        type="button"
-        onClick={() => changeLanguage()}
-      >
-        {lng ? "EN" : "DK"}
-      </button>
-    );
-  }
-
-  function switchContent() {
-    return contentSwitch ? setTextContent() : setProjectContent();
-  }
-
-  function setTextContent() {
-    return <p>{t(sectionContent)}</p>;
-  }
-  function setProjectContent() {
-    return <p>{t(sectionContent)}</p>;
-  }
 }
-
 export default App;
