@@ -1,104 +1,80 @@
-import React, { Suspense, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import useLocalStorage from 'use-local-storage';
-import './App.css';
-import Name_svg from './Name_svg';
+import React, { Suspense, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import useLocalStorage from "use-local-storage";
+import "./App.css";
+import Name_svg from "./Name_svg";
+import About_me from "./Sections/About_me";
+import Contact from "./Sections/Contact";
+import Projects from "./Sections/Projects";
 
 function App() {
   const { t, i18n } = useTranslation();
 
-  const [lng, setLng] = useLocalStorage("lng" ? true : false) // true = dk, false = en
+  const [lng, setLng] = useLocalStorage("lng" ? true : false); // true = dk, false = en
 
-  const [theme, setTheme] = useLocalStorage('theme' ? true : false) // true = light, false = dark
+  const [theme, setTheme] = useLocalStorage("theme" ? true : false); // true = light, false = dark
 
-  const [sectionContent, setSectionContent] = useState("lorem-ipsum-long")
+  const [sectionContent, setSectionContent] = useState("lorem-ipsum-long");
 
-  const [sectionTitle, setSectionTitle] = useState('selection-title-about-me')
+  const [sectionTitle, setSectionTitle] = useState("selection-title-about-me");
 
-  const [contentSwitch, setContentSwitch] = useState(true) // true = textBasedContent | false = projectBasedContent
+  const [contentSwitch, setContentSwitch] = useState(true); // true = textBasedContent | false = projectBasedContent
 
-  const _name_svg = Name_svg();
+  const [section, setSection] = useState(About_me());
 
   function updateSection(selectionTitle, sectionContent) {
-    setContentSwitch(true)
-    setSectionTitle(selectionTitle)
-    setSectionContent(sectionContent)
-  }
-
-  function updateSectionProjects(selectionTitle, sectionContent) {
-    setContentSwitch(false)
+    setContentSwitch(true);
     setSectionTitle(selectionTitle);
-    setTextContent(sectionContent)
+    setSectionContent(sectionContent);
   }
 
   const switchTheme = (checked) => {
-    setTheme(checked)
-  }
-  const temp = document.querySelectorAll(".name_svg path")
-  for(let i = 0; i<temp.length; i++){
-    console.log('letter: ' + i + ' is ' + temp[i].getTotalLength())
-  }
+    setTheme(checked);
+  };
+
   const changeLanguage = () => {
     setLng(!lng);
-    updateSection(sectionTitle, sectionContent)
+    updateSection(sectionTitle, sectionContent);
     lng ? i18n.changeLanguage("dk") : i18n.changeLanguage("en");
   };
 
-  function section() {
-    return (
-      <div className='section'>
-        <h2 className='section-title'>{t(sectionTitle)}</h2>
-        <span className='section-content'>
-          {switchContent()}
-        </span>
-      </div>
-    )
-  };
   return (
-    <Suspense >
+    <Suspense>
       <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+        @import
+        url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
       </style>
-      <div className="app" data-theme={theme ? 'dark' : 'light'}>
-        <div className='main-container'>
+      <div className="app" data-theme={theme ? "dark" : "light"}>
+        <div className="main-container">
           {languageSwitch()}
           <DarkModeSwitch
-            className='DarkModeToggle'
-            style={{ marginBottom: '2rem' }}
+            className="DarkModeToggle"
+            style={{ marginBottom: "2rem" }}
             checked={theme}
             onChange={switchTheme}
             size={40}
           />
-          <div className='content'>
-            <div className='top-right-box gradient gradient-top' />
-            <div className='bottom-right-box gradient' />
-            <div className='top-right-box' />
-            <div className='bottom-right-box' />
-            <div className='left'>
+          <div className="content">
+            <div className="top-right-box gradient gradient-top" />
+            <div className="bottom-right-box gradient" />
+            <div className="top-right-box" />
+            <div className="bottom-right-box" />
+            <div className="left">
               {Name_svg()}
-              <div className='menu'>
-                <a>
-                  <span>
-                    About
-                  </span>
+              <div className="menu">
+                <a onClick={() => setSection(About_me)}>
+                  <span> {t("selection-title-about-me")}</span>
                 </a>
-                <a>
-                  <span>
-                    Projects
-                  </span>
+                <a onClick={() => setSection(Projects)}>
+                  <span>{t("selection-title-projects")}</span>
                 </a>
-                <a>
-                  <span>
-                    Contact me
-                  </span>
+                <a onClick={() => setSection(Contact)}>
+                  <span>{t("selection-title-contact")}</span>
                 </a>
               </div>
             </div>
-            <div className='right'>
-              <h2>about me</h2>
-              <p>Nulla aliquip irure cillum velit in consectetur exercitation pariatur do minim. Aliquip nostrud anim excepteur minim consequat cillum aute voluptate nulla velit irure id tempor quis. Reprehenderit duis id laborum Lorem laborum dolore. Labore dolor tempor in sint ea pariatur cupidatat duis in Lorem in aliqua commodo. </p>
-            </div>
+            <div className="right">{section}</div>
           </div>
         </div>
       </div>
@@ -106,13 +82,19 @@ function App() {
   );
 
   function languageSwitch() {
-    return <button className='Language_button' type="button" onClick={() => changeLanguage()}>
-      {lng ? "EN" : "DK"}
-    </button>;
+    return (
+      <button
+        className="Language_button"
+        type="button"
+        onClick={() => changeLanguage()}
+      >
+        {lng ? "EN" : "DK"}
+      </button>
+    );
   }
 
   function switchContent() {
-    return contentSwitch ? setTextContent() : setProjectContent()
+    return contentSwitch ? setTextContent() : setProjectContent();
   }
 
   function setTextContent() {

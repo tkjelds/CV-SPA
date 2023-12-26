@@ -26,6 +26,10 @@
 }
 
 
+TimelineContent {
+  color: var(--text-primary);
+}
+
 
 * {
   padding: 0;
@@ -42,6 +46,27 @@ h3 {
   font-family: var(--ff-primary);
 }
 
+.right_section{
+  width: 800px;
+  height: 450px;
+  padding: 2rem 2rem;
+}
+
+.timeline {
+  width: 500px;
+}
+
+.about_me_section {
+  display: flex;
+  position: relative;
+  justify-items: center;
+  justify-items: center;
+
+}
+
+.about_me_description{
+  padding: 0 50px;
+}
 
 p,
 span {
@@ -104,13 +129,13 @@ header {
   align-items: center;
   overflow: hidden;
   height: 100%;
-  max-height: 1000px;
   box-sizing: border-box;
   align-self: center;
   justify-self: center;
   justify-content: center;
   align-items: center;
   display: flex;
+  position: relative;
 }
 
 .content {
@@ -153,6 +178,7 @@ header {
   align-items: flex-start;
   background-color: var(--background);
   padding-left: 2rem;
+  padding-bottom: 20px ;
 }
 
 .menu>* {
@@ -173,12 +199,12 @@ p {
 .left::before{
   z-index: -1;
   content: "";
-  display: block;
+  display: flex;
   position: relative;
   width: 5rem;
   height: 5rem;
-  top: 230px;
-  left: -5px;
+  top: 311px;
+  left: -10px;
   background: linear-gradient(136deg, var(--error)0%, var(--success)50%, var(--error)100%);
   border-radius: 10%;
 }
@@ -187,11 +213,10 @@ p {
   z-index: -1;
   content: "";
   display: block;
-  position: relative;
+  position: absolute;
   width: 10rem;
   height: 10rem;
-  top: calc(10rem - 11rem);
-  left: -1rem;
+  transform: translate(-15px, -15px);
   background: linear-gradient(136deg, var(--error)0%, var(--success)50%, var(--error)100%);
   border-radius: 10%;
   opacity: 100%;
@@ -234,6 +259,9 @@ a {
   transform: translate(1rem, -1rem);
 }
 
+.name_svg {
+  width: 250px;
+}
 
 .name_svg > * {
   stroke:var(--text-primary);
@@ -315,6 +343,10 @@ a {
     padding: 0 5rem;
     flex-direction: column;
     margin-bottom: 5rem;
+  }
+
+  .about_me_section{
+    flex-direction: column;
   }
 
   .left,
