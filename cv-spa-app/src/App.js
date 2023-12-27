@@ -13,7 +13,7 @@ function App() {
   const [lng, setLng] = useLocalStorage("lng" ? true : false); // true = dk, false = en
   const [theme, setTheme] = useLocalStorage("theme" ? true : false); // true = light, false = dark
   const [section, setSection] = useState(About_me());
-
+  const [underlined, setUnderlined] = useState("About_me")
   const switchTheme = (checked) => {
     setTheme(checked);
   };
@@ -59,14 +59,22 @@ function App() {
             <div className="left">
               {Name_svg()}
               <div className="menu">
-                <a onClick={() => setSection(About_me)}>
-                  <span> {t("selection-title-about-me")}</span>
+                <a onClick={() => {
+                  setSection(About_me);
+                  setUnderlined("About_me")
+                }}>
+                  <span className={underlined === "About_me" ? "underlined" : "_"}> {t("selection-title-about-me")}</span>
                 </a>
-                <a onClick={() => setSection(Projects)}>
-                  <span>{t("selection-title-projects")}</span>
+                <a onClick={() => {
+                  setSection(Projects);
+                  setUnderlined("Projects")}}>
+                  <span className={underlined === "Projects" ? "underlined" : "_"}>{t("selection-title-projects")}</span>
                 </a>
-                <a onClick={() => setSection(Contact)}>
-                  <span>{t("selection-title-contact")}</span>
+                <a onClick={() => {
+                  setSection(Contact);
+                  setUnderlined("Contacts")
+                  }}>
+                  <span className={underlined === "Contacts" ? "underlined" : "_"}>{t("selection-title-contact")}</span>
                 </a>
               </div>
             </div>
