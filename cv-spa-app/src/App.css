@@ -76,6 +76,10 @@ h3 {
   padding: 0 50px;
 }
 
+a {
+  cursor: pointer;
+}
+
 .underlined::after {
   content:'';
   width:100%;

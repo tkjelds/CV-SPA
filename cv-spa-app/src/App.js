@@ -67,13 +67,14 @@ function App() {
                 </a>
                 <a onClick={() => {
                   setSection(Projects);
-                  setUnderlined("Projects")}}>
+                  setUnderlined("Projects")
+                }}>
                   <span className={underlined === "Projects" ? "underlined" : "_"}>{t("selection-title-projects")}</span>
                 </a>
                 <a onClick={() => {
                   setSection(Contact);
                   setUnderlined("Contacts")
-                  }}>
+                }}>
                   <span className={underlined === "Contacts" ? "underlined" : "_"}>{t("selection-title-contact")}</span>
                 </a>
               </div>
