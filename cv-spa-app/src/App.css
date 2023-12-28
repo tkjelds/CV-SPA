@@ -44,6 +44,11 @@ h3 {
   font-family: var(--ff-primary);
 }
 
+p {
+  margin-top: 12px;
+  font-size: 16px;
+}
+
 .right_section {
   padding: 2rem 2rem;
 }
@@ -70,7 +75,10 @@ h3 {
 }
 
 .about_me_description {
-  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0px;
+  justify-content: center;
 }
 
 a {
@@ -169,8 +177,8 @@ header {
 .content {
   display: flex;
   flex-basis: 100%;
-  min-height: calc(100% - 102px);
-  height: calc(100% - 102px);
+  min-height: calc(100% - 222px);
+  height: calc(100% - 222px);
   width: 100vw;
   max-width: 1280px;
   padding: 2.5rem;
@@ -199,7 +207,14 @@ header {
 }
 
 .right_content[fade="1"] {
-  animation: dissolveInLeft 0.2s ease-in forwards;
+  animation: dissolveInLeft 0.4s ease-in forwards;
+}
+
+.profile_picture {
+  border-radius: 50%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  border: 3px solid var(--text-primary);
 }
 
 @keyframes dissolveInLeft {

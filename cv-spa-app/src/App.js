@@ -4,18 +4,14 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 import useLocalStorage from "use-local-storage";
 import "./App.css";
 import Name_svg from "./Name_svg";
-import About_me from "./Sections/About_me";
-import Contact from "./Sections/Contact";
+import { Contact } from "./Sections/Contact";
 import Projects from "./Sections/Projects";
+import { AboutMe } from "./Sections/About_me.js"
 
 function App() {
   const { t, i18n } = useTranslation();
   const [lng, setLng] = useLocalStorage("lng" ? true : false); // true = dk, false = en
   const [theme, setTheme] = useLocalStorage("theme" ? true : false); // true = light, false = dark
-  const [section, setSection] = useState(About_me());
-
-
-
   const [underlined, setUnderlined] = useState("About_me")
   const [fade, setFade] = useState(0)
   const switchTheme = (checked) => {
@@ -63,37 +59,36 @@ function App() {
             <div className="left">
               {Name_svg()}
               <div className="menu">
-                <a onClick={() => {
-                  setSection(About_me);
-                  setUnderlined("About_me");
-                  setFade(1)
-                }}>
+                <a onClick={() => setSection("About_me")}>
                   <span className={underlined === "About_me" ? "underlined" : "_"}> {t("selection-title-about-me")}</span>
                 </a>
-                <a onClick={() => {
-                  setSection(Projects);
-                  setUnderlined("Projects")
-                  setFade(1)
-                }}>
+                <a onClick={() => setSection("Projects")}>
                   <span className={underlined === "Projects" ? "underlined" : "_"}>{t("selection-title-projects")}</span>
                 </a>
-                <a onClick={() => {
-                  setSection(Contact);
-                  setUnderlined("Contacts")
-                  setFade(1)
-                }}>
+                <a onClick={() => setSection("Contacts")}>
                   <span className={underlined === "Contacts" ? "underlined" : "_"}>{t("selection-title-contact")}</span>
                 </a>
               </div>
             </div>
             <div className="right">
               <div className="right_accent" />
-              <div className="right_content" onAnimationEnd={() => setFade(0)} fade={fade}>{section}</div>
+              <div className="right_content" onAnimationEnd={() => setFade(0)} fade={fade}>
+                {{
+                  'About_me': <AboutMe />,
+                  'Projects': <Projects />,
+                  'Contacts': <Contact />
+                }[underlined]}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </Suspense>
   );
+
+  function setSection(section) {
+    setUnderlined(section);
+    setFade(1);
+  }
 }
 export default App;

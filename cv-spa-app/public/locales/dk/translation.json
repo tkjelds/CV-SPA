@@ -5,6 +5,12 @@
   "selection-title-about-me": "Om mig",
   "selection-title-projects": "Projekter",
   "selection-title-contact": "Kontakt mig",
+  "section": {
+    "about_me": {
+      "hello": "Hej",
+      "description": "Jeg er Tore, en nyuddannet softwareudvikler med fokus på .NET- og Android-udvikling. Jeg stræber efter at skabe intuitive applikationer, der kombinerer teknisk dygtighed med kreativitet. Fra at designe robuste backend-systemer i .Net til at designe brugergrænseflader til Android-platformen, søger jeg konstant at udvide mine evner og levere softwareløsninger af høj kvalitet."
+    }
+  },
   "section-text-about-me": "Der er temporary LMAO",
   "section-text-projects": "Der er temp, projekt text LMAO",
   "section-text-contact": "DER ER TEMP KONTAKT MEMEMEMEMEME"

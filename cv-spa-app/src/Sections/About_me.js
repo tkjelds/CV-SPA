@@ -4,7 +4,11 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import * as React from "react";
+import profile_picture from "./img/Profile_picture_pixelart.png"
+import i18n from '../i18n';
+
+
+
 
 function About_me_timeline() {
   return (
@@ -42,20 +46,17 @@ function About_me_timeline() {
   );
 }
 
-const About_me = () => {
+
+export function AboutMe() {
   return (
-    <div className="about_me_section right_section">
-      {About_me_timeline()}{" "}
+    <div className="about_me_section right_section" >
       <div className="about_me_description">
+        <h1>{i18n.t("section.about_me.hello")}</h1>
         <p>
-          {" "}
-          Nulla aliquip irure cillum velit in consectetur exercitation pariatur
-          do minim. Aliquip nostrud anim excepteur minim consequat cillum aute
-          voluptate nulla velit irure id tempor quis.{" "}
+          {i18n.t("section.about_me.description")}
         </p>
       </div>
+      <img className="profile_picture" src={profile_picture} alt="profile_picture" />
     </div>
   );
-};
-
-export default About_me;
+}

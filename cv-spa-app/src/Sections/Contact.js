@@ -1,4 +1,4 @@
-function Contact() {
+export function Contact() {
   return (
     <div className="contanct_section right_section">
       <h2>about me</h2>
@@ -19,5 +19,3 @@ function Contact() {
     </div>
   );
 }
-
-export default Contact();
