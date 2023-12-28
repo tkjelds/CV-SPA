@@ -204,6 +204,16 @@ header {
   background-color: var(--background);
 }
 
+
+.right_content[fade="1"]{
+  animation: dissolveInLeft 0.2s ease-in forwards;
+}
+
+@keyframes dissolveInLeft{
+	0%{opacity: 0; transform:translate3d(200px,0,0)}
+	100%{opacity: 1; transform:translate3d(0,0,0)}
+}
+
 .menu {
   margin-top: 2rem;
   display: flex;
@@ -266,8 +276,8 @@ p {
   border-radius: 10%;
 }
 
-.right::before{
-  z-index: -1;
+.right_accent::before{
+  z-index: -2;
   content: "";
   display: block;
   position: absolute;
@@ -279,7 +289,17 @@ p {
   opacity: 100%;
 }
 
-
+.right_accent::after{
+  z-index: -1;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  background: var(--background);
+  border-radius: 10%;
+  opacity: 100%;
+}
 
 a {
   padding-left: 0.5em;
@@ -430,6 +450,7 @@ a {
 
   .right {
     margin-bottom: auto;
+
   }
 }
 

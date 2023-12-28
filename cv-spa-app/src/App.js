@@ -14,6 +14,7 @@ function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? true : false); // true = light, false = dark
   const [section, setSection] = useState(About_me());
   const [underlined, setUnderlined] = useState("About_me")
+  const [fade, setFade] = useState(0)
   const switchTheme = (checked) => {
     setTheme(checked);
   };
@@ -61,25 +62,31 @@ function App() {
               <div className="menu">
                 <a onClick={() => {
                   setSection(About_me);
-                  setUnderlined("About_me")
+                  setUnderlined("About_me");
+                  setFade(1)
                 }}>
                   <span className={underlined === "About_me" ? "underlined" : "_"}> {t("selection-title-about-me")}</span>
                 </a>
                 <a onClick={() => {
                   setSection(Projects);
                   setUnderlined("Projects")
+                  setFade(1)
                 }}>
                   <span className={underlined === "Projects" ? "underlined" : "_"}>{t("selection-title-projects")}</span>
                 </a>
                 <a onClick={() => {
                   setSection(Contact);
                   setUnderlined("Contacts")
+                  setFade(1)
                 }}>
                   <span className={underlined === "Contacts" ? "underlined" : "_"}>{t("selection-title-contact")}</span>
                 </a>
               </div>
             </div>
-            <div className="right">{section}</div>
+            <div className="right">
+              <div className="right_accent"/>
+              <div className="right_content"  onAnimationEnd={() =>setFade(0)} fade={fade}>{section}</div>
+              </div>
           </div>
         </div>
       </div>
