@@ -51,7 +51,7 @@ export function AboutMe() {
   return (
     <div className="about_me_section right_section" >
       <div className="about_me_description">
-        <h1>{i18n.t("section.about_me.hello")}</h1>
+        <h1 className="floating">{i18n.t("section.about_me.hello")}</h1>
         <p>
           {i18n.t("section.about_me.description")}
         </p>

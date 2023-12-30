@@ -14,6 +14,7 @@ function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? true : false); // true = light, false = dark
   const [underlined, setUnderlined] = useState("About_me")
   const [fade, setFade] = useState(0)
+  
   const switchTheme = (checked) => {
     setTheme(checked);
   };

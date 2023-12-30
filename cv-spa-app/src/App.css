@@ -6,6 +6,7 @@
   --error: #ff6347;
   --success: #32cd32;
   --neutral: #808080;
+  --logo-color: #24292f;
   --ff-primary: "Roboto", sans-serif;
 }
 
@@ -17,6 +18,7 @@
   --error: #ff6347;
   --success: #32cd32;
   --neutral: #a9a9a9;
+  --logo-color: #fff;
 }
 
 .app {
@@ -423,6 +425,47 @@ a {
   animation: line-animation 2s ease forwards 0.3s, fill 0.5s ease forwards 3.3s;
 }
 
+.floating {
+  transform: translatey(0px);
+  animation: float 4s ease-in-out infinite;
+}
+
+.icon {
+  fill: var(--logo-color);
+}
+
+.mail_path {
+  height: 25px;
+  width: 25px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+svg {
+  display: block;
+}
+
+.icon {
+  aspect-ratio: 1/1;
+  height: 25px;
+  margin-right: 10px;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
 @keyframes line-animation {
   to {
     stroke-dashoffset: 0;
@@ -473,6 +516,10 @@ a {
 
   .right {
     margin-bottom: auto;
+  }
+
+  .top-right-box {
+    display: none;
   }
 }
 
