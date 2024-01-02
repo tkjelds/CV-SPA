@@ -11,7 +11,8 @@
       "description": "Jeg er Tore, en nyuddannet softwareudvikler med fokus på .NET- og Android-udvikling. Jeg stræber efter at skabe intuitive applikationer, der kombinerer teknisk dygtighed med kreativitet. Fra at designe robuste backend-systemer i .Net til at designe brugergrænseflader til Android-platformen, søger jeg konstant at udvide mine evner og levere softwareløsninger af høj kvalitet."
     },
     "contact": {
-      "contact_me": "Kom i kontakt"
+      "contact_me": "Kom i kontakt",
+      "description": "Om det  handler om at udvikle komplekse backend-strukturer eller forme intuitive Android-brugerflader, er jeg fokuseret på fremragende præstation og vækst. Hvis noget af dette lyder interessant, er du mere end velkommen til at kontakte mig."
     }
   },
   "section-text-about-me": "Der er temporary LMAO",

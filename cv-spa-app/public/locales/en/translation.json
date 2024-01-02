@@ -11,7 +11,8 @@
       "description": "I'm Tore, a recent software engineering graduate specializing in .NET and Android development. I'm dedicated to engineering user-centric applications that seamlessly fuse innovation with technical prowess. Whether navigating intricate backend architectures or sculpting intuitive Android interfaces, I am steadfast in my pursuit of excellence and continual advancement within the dynamic sphere of software development."
     },
     "contact": {
-      "contact_me": "Get in touch"
+      "contact_me": "Get in touch",
+      "description":"Whether it's unraveling complex backend structures or shaping intuitive Android interfaces, I'm committed to excellence and growth. If any of this sounds interesting feel free to reach out."
     }
   },
   "section-text-about-me": "This is temporary lmao",

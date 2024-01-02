@@ -26,8 +26,8 @@ const ContactList = () => {
       <ul>
         {contacts.map((contact, index) => (
           <li key={index}>
-            <a href={contact.link} target="_blank" rel="noopener noreferrer">
-              {contact.icon} {contact.name}
+            <a href={contact.link} className="contact_reference" target="_blank" rel="noopener noreferrer">
+              {contact.icon}
             </a>
           </li>
         ))}
@@ -39,8 +39,11 @@ const ContactList = () => {
 
 export function Contact() {
   return (
-    <div className="contact_section right_section">
-      <h1 className="floating">{i18n.t("section.contact.contact_me")}</h1>
+    <div className="contact_container">
+      <div className="contact_section right_section">
+        <h1 className="floating get_in_touch">{i18n.t("section.contact.contact_me")}</h1>
+        <p className='contact_me_description'>{i18n.t("section.contact.description")} </p>
+      </div>
       <ContactList />
     </div>
   );
