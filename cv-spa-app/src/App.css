@@ -470,10 +470,9 @@ a {
 
 .project_list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1em;
   z-index: 10;
-  overflow-y: auto;
 }
 
 li {
@@ -518,6 +517,15 @@ svg {
   }
   to {
     fill: var(--text-primary);
+  }
+}
+
+@media (max-width: 1100px) {
+  .project_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+    z-index: 10;
   }
 }
 
