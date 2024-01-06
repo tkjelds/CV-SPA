@@ -213,7 +213,6 @@ header {
   display: flex;
   flex-basis: 100%;
   min-height: calc(100% - 222px);
-  height: calc(100% - 222px);
   width: 100vw;
   max-width: 1280px;
   padding: 2.5rem;
