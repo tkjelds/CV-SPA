@@ -4,38 +4,50 @@ import * as React from 'react';
 import { CardActionArea } from '@mui/material';
 import profile_picture from "./img/Profile_picture_pixelart.png"
 import Modal from '@mui/material/Modal';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
+import i18n from '../i18n';
 
 const ProjectsList = () => {
   const projects = [
     {
+      id: "mcts",
       title: "Scrum analysis tool at KMD",
       desc: "Collaborative work",
-      img: { profile_picture }
+
       //modal_title: ,
       //modal_desc: ,
       //modal_tech: ,
       //modal_link: 
     },
     {
+      id: "scooterSharing",
       title: "Scrum analysis tool at KMD",
       desc: "Collaborative work",
-      img: { profile_picture }
+
     },
     {
-      title: "Scrum analysis tool at KMD",
+      id: "kmd",
+      title: "kmd",
       desc: "Collaborative work",
-      img: { profile_picture }
+
     },
     {
+      id: "dk_map",
       title: "Scrum analysis tool at KMD",
       desc: "Collaborative work",
-      img: { profile_picture }
+
     },
     {
+      id: "geocache",
       title: "Scrum analysis tool at KMD",
       desc: "Collaborative work",
-      img: { profile_picture }
+
+    },
+    {
+      id: "itforundersøgelse",
+      title: "Scrum analysis tool at KMD",
+      desc: "Collaborative work",
+
     },
 
   ]
@@ -51,10 +63,10 @@ const ProjectsList = () => {
           <CardActionArea onClick={handleOpen} sx={{ aspectRatio: 1 / 1 }}>
             <CardContent>
               <h2 className='card_title'>
-                {project.title}
+                {i18n.t("section.projects." + project.id + ".title")}
               </h2>
               <p className='card_desc'>
-                {project.desc}
+                {i18n.t("section.projects." + project.id + ".card_description")}
               </p>
             </CardContent>
           </CardActionArea>
@@ -65,7 +77,7 @@ const ProjectsList = () => {
             <div className='modal_box'>
               <div className='right_modal'>
                 <h1 className='modal_title'>{project.title}</h1>
-                <p>fdslkajfælksdajælfksj lskdaj fælkdsaj fælj læksdajf ælksdjælk f</p>
+                {i18n.t("section.projects." + project.id + ".modal_description")}
               </div>
               <div className='left_modal'>
                 <div className='tech_stack'>

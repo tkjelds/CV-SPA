@@ -503,11 +503,16 @@ svg {
   justify-content: space-evenly;
 }
 
+.right_modal {
+  margin: 0 20px 80px 40px;
+}
+
 .left_modal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 20px;
+  min-width: 250px;
 }
 .left_modal,
 .right_modal {
@@ -538,6 +543,7 @@ svg {
 .github_link {
   display: flex;
   justify-content: end;
+  padding-right: 20px;
 }
 
 @keyframes float {
