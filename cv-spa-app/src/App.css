@@ -485,6 +485,11 @@ svg {
   display: block;
 }
 
+.card_title,
+.card_desc {
+  color: black;
+}
+
 .modal_box {
   position: absolute;
   top: 50%;

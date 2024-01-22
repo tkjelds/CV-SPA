@@ -6,6 +6,7 @@ import * as React from 'react';
 import { CardActionArea } from '@mui/material';
 import profile_picture from "./img/Profile_picture_pixelart.png"
 import Modal from '@mui/material/Modal';
+import { Height } from '@mui/icons-material';
 const ProjectsList = () => {
   const projects = [
     {
@@ -44,38 +45,19 @@ const ProjectsList = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
-
-
   return (
     <div className='project_list'>
       {projects.map((project) => (
-        <Card sx={{ aspectRatio: 1 / 1, minHeight: 150 }}>
-          <CardActionArea onClick={handleOpen}>
-            <CardContent height={500}>
-              <Typography gutterBottom variant="h5" component="div">
+        <Card sx={{ backgroundColor: "white" }}>
+          <CardActionArea onClick={handleOpen} sx={{ aspectRatio: 1 / 1 }}>
+            <CardContent>
+              <h2 className='card_title'>
                 {project.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
+              </h2>
+              <p className='card_desc'>
                 {project.desc}
-              </Typography>
+              </p>
             </CardContent>
-            <CardMedia
-              component="img"
-              height={150}
-              image={profile_picture}
-              alt="alt-picture"
-            />
           </CardActionArea>
           <Modal
             open={open}
@@ -97,8 +79,9 @@ const ProjectsList = () => {
             </div>
           </Modal>
         </Card>
-      ))}
-    </div>
+      ))
+      }
+    </div >
   );
 };
 
