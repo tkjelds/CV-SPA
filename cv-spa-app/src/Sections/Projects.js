@@ -47,6 +47,11 @@ const ProjectsList = () => {
       modal_link: "https.test.com",
       techStack: ["fisk", "test", "test"]
     },
+    {
+      id: "spa",
+      modal_link: "https.test.com",
+      techStack: ["fisk", "test", "test"]
+    },
 
   ]
 

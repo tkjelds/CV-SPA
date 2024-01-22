@@ -44,6 +44,11 @@
         "title": "IT feasibility study",
         "card_description": "Calvin is a scrum analysis tool, designed to optimize the creation of teams and structure of sprints",
         "modal_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim ultricies egestas. Aenean scelerisque elit in ex gravida, ac rhoncus sem sagittis. In ac finibus quam. Etiam posuere, arcu non imperdiet dignissim, nibh magna efficitur justo, mattis sodales leo nulla vitae quam. Integer imperdiet consectetur hendrerit. Quisque venenatis odio eu tristique commodo. Vivamus sed tempus ipsum. Duis mollis, felis ut commodo consequat, dui urna interdum nisl, dignissim luctus ligula arcu et arcu. Praesent felis erat, commodo in ex nec, pretium sagittis dui. Nulla id dignissim arcu. Pellentesque malesuada cursus urna, a mollis est convallis at. Suspendisse varius augue diam, ut ornare nunc pellentesque vel. Nunc vitae tristique orci. Nulla arcu ligula, hendrerit ac molestie a, tincidunt ac sapien."
+      },
+      "spa": {
+        "title": "Developer portfolio SPA",
+        "card_description": "Calvin is a scrum analysis tool, designed to optimize the creation of teams and structure of sprints",
+        "modal_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim ultricies egestas. Aenean scelerisque elit in ex gravida, ac rhoncus sem sagittis. In ac finibus quam. Etiam posuere, arcu non imperdiet dignissim, nibh magna efficitur justo, mattis sodales leo nulla vitae quam. Integer imperdiet consectetur hendrerit. Quisque venenatis odio eu tristique commodo. Vivamus sed tempus ipsum. Duis mollis, felis ut commodo consequat, dui urna interdum nisl, dignissim luctus ligula arcu et arcu. Praesent felis erat, commodo in ex nec, pretium sagittis dui. Nulla id dignissim arcu. Pellentesque malesuada cursus urna, a mollis est convallis at. Suspendisse varius augue diam, ut ornare nunc pellentesque vel. Nunc vitae tristique orci. Nulla arcu ligula, hendrerit ac molestie a, tincidunt ac sapien."
       }
     }
   },
