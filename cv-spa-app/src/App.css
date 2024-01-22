@@ -495,15 +495,49 @@ svg {
   top: 50%;
   left: 50%;
   width: 50rem;
-  height: 25rem;
+  min-height: 25rem;
   transform: translate(-50%, -50%);
   background-color: white;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.left_modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.left_modal,
+.right_modal {
+  padding-top: 20px;
 }
 
 .modal_title {
   color: black;
+}
+
+.modal_icon {
+  padding: 0;
+  text-align: center;
+  font-size: 75px;
+  color: black;
+  align-self: center;
+  justify-self: center;
+}
+
+.tech_stack_modal > * {
+  margin: 0;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 20px;
+  color: black;
+}
+
+.github_link {
+  display: flex;
+  justify-content: end;
 }
 
 @keyframes float {
@@ -598,6 +632,14 @@ svg {
     display: inline-block;
     margin-left: 40px;
     /* You can also add some margins here to make it look prettier */
+  }
+
+  .tech_stack_modal > * {
+    display: flex;
+  }
+  .right_modal,
+  .left_modal {
+    margin: 0px 20px;
   }
 }
 

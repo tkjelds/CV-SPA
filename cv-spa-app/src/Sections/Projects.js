@@ -4,6 +4,8 @@ import * as React from 'react';
 import { CardActionArea } from '@mui/material';
 import profile_picture from "./img/Profile_picture_pixelart.png"
 import Modal from '@mui/material/Modal';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+
 const ProjectsList = () => {
   const projects = [
     {
@@ -68,9 +70,18 @@ const ProjectsList = () => {
               <div className='left_modal'>
                 <div className='tech_stack'>
                   <h1 className='modal_title'>Tech stack</h1>
+                  <ul className='tech_stack_modal'>
+                    <li>c#</li>
+                    <li>github</li>
+                    <li>fisk</li>
+                    <li>fisk</li>
+                    <li>fisk</li>
+                  </ul>
                 </div>
                 <div className='github_link'>
-                  <h1 className=' modal_title'>Github</h1>
+                  <a href='https://github.com/tkjelds' className='modal_icon'>
+                    {<FaGithub />}
+                  </a>
                 </div>
               </div>
             </div>
