@@ -6,13 +6,16 @@ import * as React from 'react';
 import { CardActionArea } from '@mui/material';
 import profile_picture from "./img/Profile_picture_pixelart.png"
 import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
 const ProjectsList = () => {
   const projects = [
     {
       title: "Scrum analysis tool at KMD",
       desc: "Collaborative work",
       img: { profile_picture }
+      //modal_title: ,
+      //modal_desc: ,
+      //modal_tech: ,
+      //modal_link: 
     },
     {
       title: "Scrum analysis tool at KMD",
@@ -47,7 +50,6 @@ const ProjectsList = () => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -60,12 +62,12 @@ const ProjectsList = () => {
       {projects.map((project) => (
         <Card sx={{ aspectRatio: 1 / 1, minHeight: 150 }}>
           <CardActionArea onClick={handleOpen}>
-            <CardContent sx={{}}>
+            <CardContent height={500}>
               <Typography gutterBottom variant="h5" component="div">
-                Lizard
+                {project.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over 6,000
+                {project.desc}
               </Typography>
             </CardContent>
             <CardMedia
@@ -78,17 +80,16 @@ const ProjectsList = () => {
           <Modal
             open={open}
             onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
           >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Text in a modal
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </Typography>
-            </Box>
+            <div className='modal_box'>
+              <div className='right_modal'>
+                <p>fdslkajfælksdajælfksj lskdaj fælkdsaj fælj læksdajf ælksdjælk f</p>
+              </div>
+              <div className='left_modal'>
+                <p>saflkæds</p>
+                <p>saflkæds</p>
+              </div>
+            </div>
           </Modal>
         </Card>
       ))}

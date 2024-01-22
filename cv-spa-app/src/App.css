@@ -8,6 +8,7 @@
   --neutral: #808080;
   --logo-color: #24292f;
   --ff-primary: "Roboto", sans-serif;
+  --modal-background: #f6eee3;
 }
 
 [data-theme="dark"] {
@@ -19,6 +20,7 @@
   --success: #32cd32;
   --neutral: #a9a9a9;
   --logo-color: #fff;
+  --modal-background: #f6eee3;
 }
 
 .app {
@@ -484,6 +486,18 @@ svg {
   display: block;
 }
 
+.modal_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50rem;
+  height: 25rem;
+  transform: translate(-50%, -50%);
+  background-color: var(--modal-background);
+  display: flex;
+  flex-direction: row;
+}
+
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -535,7 +549,10 @@ svg {
     flex-direction: column;
     margin-bottom: 5rem;
   }
-
+  .modal_box {
+    width: 40rem;
+    flex-direction: column;
+  }
   .about_me_section {
     flex-direction: column;
   }
@@ -594,5 +611,9 @@ svg {
   .left {
     height: auto;
     padding: 2.5rem 0;
+  }
+
+  .modal_box {
+    width: 25rem;
   }
 }
