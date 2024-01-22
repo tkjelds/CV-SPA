@@ -592,6 +592,12 @@ svg {
   }
 }
 
+@media (max-width: 680px) {
+  .modal_box {
+    width: 25rem;
+  }
+}
+
 @media (max-width: 450px) {
   .content {
     padding: 0 1rem;

@@ -83,11 +83,16 @@ const ProjectsList = () => {
           >
             <div className='modal_box'>
               <div className='right_modal'>
+                <h1>{project.title}</h1>
                 <p>fdslkajfælksdajælfksj lskdaj fælkdsaj fælj læksdajf ælksdjælk f</p>
               </div>
               <div className='left_modal'>
-                <p>saflkæds</p>
-                <p>saflkæds</p>
+                <div className='tech_stack'>
+                  <h1>Tech stack</h1>
+                </div>
+                <div className='github_link'>
+                  <h1>Github</h1>
+                </div>
               </div>
             </div>
           </Modal>
