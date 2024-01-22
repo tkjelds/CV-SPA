@@ -8,7 +8,7 @@
   --neutral: #808080;
   --logo-color: #24292f;
   --ff-primary: "Roboto", sans-serif;
-  --modal-background: #f6eee3;
+  --modal-background: rgb(222, 227, 230);
 }
 
 [data-theme="dark"] {
@@ -497,9 +497,13 @@ svg {
   width: 50rem;
   height: 25rem;
   transform: translate(-50%, -50%);
-  background-color: var(--modal-background);
+  background-color: white;
   display: flex;
   flex-direction: row;
+}
+
+.modal_title {
+  color: black;
 }
 
 @keyframes float {
