@@ -11,56 +11,62 @@ const ProjectsList = () => {
   const projects = [
     {
       id: "mcts",
-      title: "Scrum analysis tool at KMD",
-      desc: "Collaborative work",
+      modal_link: "https.test.com",
+      techStack: ["fi2sk", "test", "test"]
 
       //modal_title: ,
       //modal_desc: ,
       //modal_tech: ,
-      //modal_link: 
+
     },
     {
       id: "scooterSharing",
-      title: "Scrum analysis tool at KMD",
-      desc: "Collaborative work",
+      modal_link: "https.test.com",
+      techStack: ["fisk", "test", "test", "kristus"]
 
     },
     {
       id: "kmd",
-      title: "kmd",
-      desc: "Collaborative work",
+      modal_link: "https.test.com",
+      techStack: ["fisk", "test", "test"]
 
     },
     {
       id: "dk_map",
-      title: "Scrum analysis tool at KMD",
-      desc: "Collaborative work",
+      modal_link: "https.test.com",
+      techStack: ["fisk", "test", "test"]
 
     },
     {
       id: "geocache",
-      title: "Scrum analysis tool at KMD",
-      desc: "Collaborative work",
-
+      modal_link: "https.test.com",
+      techStack: ["fisk", "test", "test"]
     },
     {
       id: "itforundersøgelse",
-      title: "Scrum analysis tool at KMD",
-      desc: "Collaborative work",
-
+      modal_link: "https.test.com",
+      techStack: ["fisk", "test", "test"]
     },
 
   ]
 
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = (clickedProject) => {
+    setOpen(true);
+    setSelectedProject(clickedProject);
+  }
   const handleClose = () => setOpen(false);
+  const [selectedProject, setSelectedProject] = React.useState({
+    id: "itforundersøgelse",
+    modal_link: "https.test.com",
+    techStack: ["fisk", "test", "test"]
+  });
 
   return (
     <div className='project_list'>
       {projects.map((project) => (
         <Card sx={{ backgroundColor: "white" }}>
-          <CardActionArea onClick={handleOpen} sx={{ aspectRatio: 1 / 1 }}>
+          <CardActionArea onClick={() => handleOpen(project)} sx={{ aspectRatio: 1 / 1 }}>
             <CardContent>
               <h2 className='card_title'>
                 {i18n.t("section.projects." + project.id + ".title")}
@@ -70,37 +76,35 @@ const ProjectsList = () => {
               </p>
             </CardContent>
           </CardActionArea>
-          <Modal
-            open={open}
-            onClose={handleClose}
-          >
-            <div className='modal_box'>
-              <div className='right_modal'>
-                <h1 className='modal_title'>{project.title}</h1>
-                {i18n.t("section.projects." + project.id + ".modal_description")}
-              </div>
-              <div className='left_modal'>
-                <div className='tech_stack'>
-                  <h1 className='modal_title'>Tech stack</h1>
-                  <ul className='tech_stack_modal'>
-                    <li>c#</li>
-                    <li>github</li>
-                    <li>fisk</li>
-                    <li>fisk</li>
-                    <li>fisk</li>
-                  </ul>
-                </div>
-                <div className='github_link'>
-                  <a href='https://github.com/tkjelds' className='modal_icon'>
-                    {<FaGithub />}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Modal>
+
         </Card>
       ))
-      }
+      }<Modal
+        open={open}
+        onClose={handleClose}
+      >
+        <div className='modal_box'>
+          <div className='right_modal'>
+            <h1 className='modal_title'>{i18n.t("section.projects." + selectedProject.id + ".title")}</h1>
+            {i18n.t("section.projects." + selectedProject.id + ".modal_description")}
+          </div>
+          <div className='left_modal'>
+            <div className='tech_stack'>
+              <h1 className='modal_title'>Tech stack</h1>
+              <ul className='tech_stack_modal'>
+                {selectedProject.techStack.map((tech) => (
+                  <li> {tech}</li>
+                ))}
+              </ul>
+            </div>
+            <div className='github_link'>
+              <a href='https://github.com/tkjelds' className='modal_icon'>
+                {<FaGithub />}
+              </a>
+            </div>
+          </div>
+        </div>
+      </Modal>
     </div >
   );
 };
