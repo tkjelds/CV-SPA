@@ -11,46 +11,38 @@ const ProjectsList = () => {
   const projects = [
     {
       id: "mcts",
-      modal_link: "https.test.com",
-      techStack: ["fi2sk", "test", "test"]
-
-      //modal_title: ,
-      //modal_desc: ,
-      //modal_tech: ,
-
+      modalLink: "https.test.com",
+      techStack: [".Net", "C#", "Xunit", "Git", "Github Actions"]
     },
     {
       id: "scooterSharing",
-      modal_link: "https.test.com",
-      techStack: ["fisk", "test", "test", "kristus"]
-
+      modalLink: "https.test.com",
+      techStack: ["Kotlin", "Android studio", "JUnit", "Google firebase", "Css"]
     },
     {
       id: "kmd",
-      modal_link: "https.test.com",
-      techStack: ["fisk", "test", "test"]
-
+      modalLink: "https.test.com",
+      techStack: [".Net", "F#", "Kubernetes", "Docker", "GraphQL", "Scrum"]
     },
     {
       id: "dk_map",
-      modal_link: "https.test.com",
-      techStack: ["fisk", "test", "test"]
-
+      modalLink: "https.test.com",
+      techStack: ["Java", "JavaFX", "Git", "XML"]
     },
     {
       id: "geocache",
-      modal_link: "https.test.com",
-      techStack: ["fisk", "test", "test"]
+      modalLink: "https.test.com",
+      techStack: ["Kotlin", "Android studio", "JUnit", "Realm"]
     },
     {
       id: "itforundersøgelse",
-      modal_link: "https.test.com",
-      techStack: ["fisk", "test", "test"]
+      modalLink: "https.test.com",
+      techStack: []
     },
     {
       id: "spa",
-      modal_link: "https.test.com",
-      techStack: ["fisk", "test", "test"]
+      modalLink: "https.test.com",
+      techStack: ["React", "Javascript", "Css", "I18n", "Mui"]
     },
 
   ]
@@ -63,7 +55,7 @@ const ProjectsList = () => {
   const handleClose = () => setOpen(false);
   const [selectedProject, setSelectedProject] = React.useState({
     id: "itforundersøgelse",
-    modal_link: "https.test.com",
+    modalLink: "https.test.com",
     techStack: ["fisk", "test", "test"]
   });
 
@@ -81,7 +73,6 @@ const ProjectsList = () => {
               </p>
             </CardContent>
           </CardActionArea>
-
         </Card>
       ))
       }<Modal
@@ -103,7 +94,7 @@ const ProjectsList = () => {
               </ul>
             </div>
             <div className='github_link'>
-              <a href='https://github.com/tkjelds' className='modal_icon'>
+              <a href={selectedProject.modalLink} className='modal_icon'>
                 {<FaGithub />}
               </a>
             </div>
