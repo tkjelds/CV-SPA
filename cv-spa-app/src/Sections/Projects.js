@@ -32,12 +32,12 @@ const ProjectsList = () => {
     {
       id: "geocache",
       modalLink: "https.test.com",
-      techStack: ["Kotlin", "Android studio", "JUnit", "Realm"]
+      techStack: ["Kotlin", "Android studio", "JUnit", "Room"]
     },
     {
       id: "itforundersøgelse",
       modalLink: "https.test.com",
-      techStack: []
+      techStack: ["MUST"]
     },
     {
       id: "spa",
