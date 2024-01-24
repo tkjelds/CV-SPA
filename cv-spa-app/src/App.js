@@ -13,7 +13,6 @@ function App() {
   const [lng, setLng] = useLocalStorage("lng" ? true : false); // true = dk, false = en
   const [theme, setTheme] = useLocalStorage("theme" ? true : false); // true = light, false = dark
   const [underlined, setUnderlined] = useState("About_me");
-  const [gradient, setGradient] = useState("gradient1");
   const [fade, setFade] = useState(0);
 
   const switchTheme = (checked) => {
