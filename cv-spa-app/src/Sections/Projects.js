@@ -54,26 +54,30 @@ const ProjectsList = () => {
   }
   const handleClose = () => setOpen(false);
   const [selectedProject, setSelectedProject] = React.useState({
-    id: "itforundersøgelse",
-    modalLink: "https.test.com",
-    techStack: ["fisk", "test", "test"]
+    id: "null",
+    modalLink: "null",
+    techStack: ["null"]
   });
 
   return (
     <div className='project_list'>
       {projects.map((project) => (
-        <Card sx={{ backgroundColor: "white" }}>
-          <CardActionArea onClick={() => handleOpen(project)} sx={{ aspectRatio: 1 / 1 }}>
-            <CardContent>
-              <h2 className='card_title'>
-                {i18n.t("section.projects." + project.id + ".title")}
-              </h2>
-              <p className='card_desc'>
-                {i18n.t("section.projects." + project.id + ".card_description")}
-              </p>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+        <div className='card'>
+          <Card sx={{ backgroundColor: "white" }}>
+            <CardActionArea onClick={() => handleOpen(project)} sx={{ aspectRatio: 1 / 1 }}>
+              <CardContent>
+
+                <h2 className='card_title'>
+                  {i18n.t("section.projects." + project.id + ".title")}
+                </h2>
+                <p className='card_desc'>
+                  {i18n.t("section.projects." + project.id + ".card_description")}
+                </p>
+
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </div>
       ))
       }<Modal
         open={open}

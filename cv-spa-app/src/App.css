@@ -312,6 +312,61 @@ p {
   color: var(--text-primary);
 }
 
+.modal_box {
+  z-index: 0;
+  border-radius: 1%;
+}
+
+.modal_box::before,
+.modal_box::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  transform: translate(-328px, -8px);
+  background: linear-gradient(
+    136deg,
+    var(--error) 0%,
+    var(--success) 50%,
+    var(--error) 100%
+  );
+  border-radius: 10%;
+}
+
+.modal_box::after {
+  background: white;
+  transform: translate(-320px);
+}
+
+.card::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  transform: translate(-5px, -5px);
+  background: linear-gradient(
+    136deg,
+    var(--error) 0%,
+    var(--success) 50%,
+    var(--error) 100%
+  );
+  border-radius: 10%;
+}
+
+.card {
+  z-index: 0;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.card:hover {
+  --success: rgb(170, 0, 255);
+  --neutral: rgb(0, 106, 255);
+}
 .left::before {
   z-index: -1;
   content: "";
