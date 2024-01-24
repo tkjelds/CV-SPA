@@ -1,7 +1,7 @@
 :root {
   --background: #d1d1d1;
   --text-primary: #333333;
-  --text-secondary: #00609f;
+  --text-secondary: #004a7c;
   --text-accent: #a06c0c;
   --error: #ff6347;
   --success: #32cd32;
@@ -21,6 +21,19 @@
   --neutral: #a9a9a9;
   --logo-color: #fff;
   --modal-background: #f6eee3;
+}
+
+[data-theme="About_me"]{
+  --error: purple;
+  --success: red;
+}
+[data-theme="Projects"]{
+  --error: green;
+  --success: blue;
+}
+[data-theme="Contacts"]{
+  --error: yellow;
+  --success: green;
 }
 
 .app {
@@ -356,6 +369,7 @@ p {
 }
 
 .card {
+  aspect-ratio: 1/1;
   z-index: 0;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -526,7 +540,7 @@ a {
 
 .project_list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1em;
   z-index: 10;
 }
@@ -641,7 +655,7 @@ svg {
 @media (max-width: 1100px) {
   .project_list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1em;
     z-index: 10;
   }
