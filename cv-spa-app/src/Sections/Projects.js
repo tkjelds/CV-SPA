@@ -63,7 +63,7 @@ const ProjectsList = () => {
     <div className="project_list">
       {projects.map((project) => (
         <div className="card">
-          <Card sx={{ backgroundColor: "white" }}>
+          <Card>
             <CardActionArea
               onClick={() => handleOpen(project)}
               sx={{ aspectRatio: 1 / 1 }}

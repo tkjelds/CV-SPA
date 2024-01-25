@@ -23,15 +23,15 @@
   --modal-background: #f6eee3;
 }
 
-[data-theme="About_me"]{
+[data-theme="About_me"] {
   --error: purple;
   --success: red;
 }
-[data-theme="Projects"]{
+[data-theme="Projects"] {
   --error: green;
   --success: blue;
 }
-[data-theme="Contacts"]{
+[data-theme="Contacts"] {
   --error: yellow;
   --success: green;
 }
@@ -380,6 +380,9 @@ p {
 .card:hover {
   --success: rgb(170, 0, 255);
   --neutral: rgb(0, 106, 255);
+  transform: translatey(0px);
+  animation: float 1s ease-in-out infinite;
+  background-color: var(--error);
 }
 .left::before {
   z-index: -1;
