@@ -11,12 +11,12 @@ const ProjectsList = () => {
   const projects = [
     {
       id: "mcts",
-      modalLink: "https.test.com",
+      modalLink: "https://github.com/tkjelds/Barbajuan",
       techStack: [".Net", "C#", "Xunit", "Git", "Github Actions"],
     },
     {
       id: "scooterSharing",
-      modalLink: "https.test.com",
+      modalLink: "https://github.com/tkjelds/ScooterSharing",
       techStack: [
         "Kotlin",
         "Android studio",
@@ -27,22 +27,22 @@ const ProjectsList = () => {
     },
     {
       id: "kmd",
-      modalLink: "https.test.com",
+      modalLink: "https://www.kmd.dk/",
       techStack: [".Net", "F#", "Kubernetes", "Docker", "GraphQL", "Scrum"],
     },
     {
       id: "dk_map",
-      modalLink: "https.test.com",
+      modalLink: "https://github.com/tkjelds/RouteFinding",
       techStack: ["Java", "JavaFX", "Git", "XML"],
     },
     {
       id: "geocache",
-      modalLink: "https.test.com",
+      modalLink: "https://github.com/tkjelds/GoChaching",
       techStack: ["Kotlin", "Android studio", "JUnit", "Room"],
     },
     {
       id: "spa",
-      modalLink: "https.test.com",
+      modalLink: "https://github.com/tkjelds/CV-SPA.git",
       techStack: ["React", "Javascript", "Css", "I18n", "Mui"],
     },
   ];
