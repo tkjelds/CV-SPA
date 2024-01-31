@@ -5,7 +5,6 @@ import Modal from "@mui/material/Modal";
 import * as React from "react";
 import { FaGithub } from "react-icons/fa";
 import i18n from "../i18n";
-import profile_picture from "./img/Profile_picture_pixelart.png";
 
 const ProjectsList = () => {
   const projects = [
