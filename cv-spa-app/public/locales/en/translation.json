@@ -16,7 +16,7 @@
       "kmd": {
         "title": "Calvin, a scrum analyzer",
         "card_description": "Calvin is a scrum analysis tool, designed to optimize the creation of teams and structure of sprints",
-        "modal_description": "During my time as a student developer at KMD, I worked within the Research and Development department, workingin an agile environment focused on developing a scrum analysis tool named Calvin. The project was implemented using the functional programming language F#. GraphQL served as the primary query tool, enabling the sorting and analysis of various sprints. The project facilitated the comparison of sprint durations, velocity, and the identification of product owners and scrum masters with the highest velocity. The development process incorporated Continuous Integration/Continuous Deployment (CI/CD) tools, Docker and Kubernetes."
+        "modal_description": "During my time as a student developer at KMD, I worked within the Research and Development department, working in an agile environment focused on developing a scrum analysis tool named Calvin. The project was implemented using the functional programming language F#. GraphQL served as the primary query tool, enabling the sorting and analysis of various sprints. The project facilitated the comparison of sprint durations, velocity, and the identification of product owners and scrum masters with the highest velocity. The development process incorporated Continuous Integration/Continuous Deployment (CI/CD) tools, Docker and Kubernetes."
       },
       "scooterSharing": {
         "title": "Scooter Sharing android application",
