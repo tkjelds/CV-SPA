@@ -60,7 +60,7 @@ function App() {
             <div className="left">
               {Name_svg()}
               <div className="menu">
-                <p className="menu_item" href="javascript:void(0)" onClick={() => setSection("About_me")}>
+                <p className="menu_item" onClick={() => setSection("About_me")}>
                   <span
                     className={underlined === "About_me" ? "underlined" : "_"}
                   >
