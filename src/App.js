@@ -60,28 +60,28 @@ function App() {
             <div className="left">
               {Name_svg()}
               <div className="menu">
-                <a onClick={() => setSection("About_me")}>
+                <p className="menu_item" href="javascript:void(0)" onClick={() => setSection("About_me")}>
                   <span
                     className={underlined === "About_me" ? "underlined" : "_"}
                   >
                     {" "}
                     {t("selection-title-about-me")}
                   </span>
-                </a>
-                <a onClick={() => setSection("Projects")}>
+                </p>
+                <p className="menu_item" onClick={() => setSection("Projects")}>
                   <span
                     className={underlined === "Projects" ? "underlined" : "_"}
                   >
                     {t("selection-title-projects")}
                   </span>
-                </a>
-                <a onClick={() => setSection("Contacts")}>
+                </p>
+                <p className="menu_item" onClick={() => setSection("Contacts")}>
                   <span
                     className={underlined === "Contacts" ? "underlined" : "_"}
                   >
                     {t("selection-title-contact")}
                   </span>
-                </a>
+                </p>
               </div>
             </div>
             <div className="right">

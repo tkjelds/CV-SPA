@@ -98,8 +98,13 @@ p {
   justify-content: center;
 }
 
-a {
+.menu_item {
+  font-size: 1em;
+  font-family: "Times New Roman", Times, serif;
   cursor: pointer;
+  color: inherit;
+  text-decoration: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .underlined::after {
