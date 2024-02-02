@@ -237,7 +237,7 @@ header {
   max-width: 1280px;
   padding: 2.5rem;
   align-self: center;
-  justify-content: end;
+  justify-content: flex-end;
   overflow: hidden;
 }
 
@@ -620,7 +620,7 @@ svg {
 
 .github_link {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding-right: 20px;
 }
 
